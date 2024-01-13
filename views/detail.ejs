@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs")  %>
+
+<section id="read" class="container">
+    <h1 class="heading">Book Detail</h1>
+    <% if(locals.book){ %> 
+            <div class="flexRow">
+                <div class="image">
+                    <a class="link" href="/"><img src="<%= book.img %>" alt="<%= book.title %>" class="cover"></a>
+                </div>
+                <div class="bookDetails" >
+                    <h2 style="white-space: pre-line; font-family: 'Roboto', sans-serif;" class="bookTitle"><%= book.title %></h2>
+                    <h3 style="font-family: 'Roboto', sans-serif;">by <%= book.author %></h3>
+                    <p style="font-family: 'Roboto', sans-serif;">ISBN: <%= book.isbn %></p>
+                    <span class="้star">
+                        <% if (book.rate >= 4.5 || book.rate == 5.0) { %>
+                            &starf;&starf;&starf;&starf;&starf;
+                        <% } else if (book.rate >= 4.0) { %>
+                            &starf;&starf;&starf;&starf;&star;
+                        <% } else if (book.rate >= 3.5) { %>
+                            &starf;&starf;&starf;&starf;&star;
+                        <% } else if (book.rate >= 3.0) { %>
+                            &starf;&starf;&starf;&star;&star;
+                        <% } else if (book.rate >= 2.5) { %>
+                            &starf;&starf;&starf;&star;&star;
+                        <% } else if (book.rate >= 2.0) { %>
+                            &starf;&starf;&star;&star;&star;
+                        <% } else if (book.rate >= 1.5) { %>
+                            &starf;&starf;&star;&star;&star;
+                        <% } else if (book.rate >= 1.0) { %>
+                            &starf;&star;&star;&star;&star;
+                        <% } else if (book.rate >= 0.5) { %>
+                            &starf;&star;&star;&star;&star;
+                        <% } else { %>
+                            &star;&star;&star;&star;&star;
+                        <% } %>
+                    </span>
+                    <%= book.rate %>
+                </p>
+                </div>
+            </div>
+            <div class="review">
+                <p style="white-space: pre-line;"><%= book.review %></p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            
+    <%  } %>
+</section>
+
+<%- include("partials/footer.ejs")  %>
