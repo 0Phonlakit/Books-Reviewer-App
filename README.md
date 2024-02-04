@@ -3,7 +3,7 @@
 This website was created to study how to use JavaScript with PostgreSQL. The website will pull data stored in PostgreSQL and display it.
 
 ## How to use and what you need
-* The index.js file uses two main libraries:
+* The index.js file uses three main libraries:
     * **Express**: This library is used to start the server.
     * **BodyParser**: This library is used to store data entered by the user.
     * **pg**: This library allows you to use PostgreSQL in JavaScript.
